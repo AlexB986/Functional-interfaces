@@ -96,23 +96,16 @@ public class Test {
         System.out.println("-------------------5----------------");
 
 
-//        Predicate<SomeTestNumber> condition = new Predicate<SomeTestNumber>() {
-//            @Override
-//            public boolean test(SomeTestNumber testNumber) {
-//                return testNumber.getNumber() > 0;
-//            }
-//        };
-//        for (SomeTestNumber someNumber : number) {
-//            ternaryOperator(condition.test(someNumber));
-//        }
+
     }
+
     public static <T, U> Function<T, U> ternaryOperator(Predicate<? super T> condition,
                                                         Function<? super T, ? extends U> ifTrue,
                                                         Function<? super T, ? extends U> ifFalse) {
         T t = null;
-        if (condition.test(t)) {
+        if (condition.test(t)==true) {
             ifTrue();
-        } else if (condition.test(t)) {
+        } else if (condition.test(t)==false) {
             ifFalse();
         }
 
