@@ -96,32 +96,35 @@ public class Test {
         System.out.println("-------------------5----------------");
 
 
-
-        Predicate<SomeTestNumber> condition = new Predicate<SomeTestNumber>() {
-            @Override
-            public boolean test(SomeTestNumber testNumber) {
-                return testNumber.getNumber() > 0;
-            }
-        };
-        for (SomeTestNumber someNumber : number) {
-            ternaryOperator(condition.test(someNumber));
-        }
+//        Predicate<SomeTestNumber> condition = new Predicate<SomeTestNumber>() {
+//            @Override
+//            public boolean test(SomeTestNumber testNumber) {
+//                return testNumber.getNumber() > 0;
+//            }
+//        };
+//        for (SomeTestNumber someNumber : number) {
+//            ternaryOperator(condition.test(someNumber));
+//        }
     }
-
-    public static void ternaryOperator(boolean predicate) {
-        if (predicate == true) {
+    public static <T, U> Function<T, U> ternaryOperator(Predicate<? super T> condition,
+                                                        Function<? super T, ? extends U> ifTrue,
+                                                        Function<? super T, ? extends U> ifFalse) {
+        T t = null;
+        if (condition.test(t)) {
             ifTrue();
-        }else if (predicate==false) {
-            ifFolse();
+        } else if (condition.test(t)) {
+            ifFalse();
         }
 
+        return null;
     }
 
     public static void ifTrue() {
         System.out.println("If True");
     }
 
-    public static void ifFolse() {
+    public static void ifFalse() {
         System.out.println("if False");
     }
+
 }
