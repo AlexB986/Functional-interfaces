@@ -96,21 +96,22 @@ public class Test {
         System.out.println("-------------------5----------------");
 
 
-
     }
 
     public static <T, U> Function<T, U> ternaryOperator(Predicate<? super T> condition,
                                                         Function<? super T, ? extends U> ifTrue,
                                                         Function<? super T, ? extends U> ifFalse) {
+
         T t = null;
-        if (condition.test(t)==true) {
-            ifTrue();
-        } else if (condition.test(t)==false) {
-            ifFalse();
+        if (condition.test(t) == true) {
+            ifTrue.apply(t);
+        } else if (condition.test(t) == false) {
+            ifFalse.apply(t);
         }
 
         return null;
     }
+
 
     public static void ifTrue() {
         System.out.println("If True");
