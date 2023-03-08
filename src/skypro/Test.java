@@ -113,12 +113,5 @@ public class Test {
     }
 
 
-    public static void ifTrue() {
-        System.out.println("If True");
-    }
-
-    public static void ifFalse() {
-        System.out.println("if False");
-    }
 
 }
