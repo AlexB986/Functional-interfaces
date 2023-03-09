@@ -108,10 +108,7 @@ public class Test {
         } else if (condition.test(t) == false) {
             ifFalse.apply(t);
         }
+        return x -> condition.test(t) ? ifFalse.apply(t):ifTrue.apply(t);
 
-        return null;
     }
-
-
-
 }
